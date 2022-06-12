@@ -6,20 +6,12 @@ export default class DATE {
 
     
 
-    /* static async start(dato) {
-       await UI.init(dato);
-       
-        dato.controlGame = setInterval(this.play(dato), dato.time);
-    }
+   /**
+    * CONTROLAMOS EL CONTACTO DE LAS BARRA1 CON LA PELOTA
+    * @returns RETORNA UN BOOLEAN PARA CONTROLAR EL CONTACTO CDE LA BARRA CON LA PELOTA
+    */
 
-    static  play(dato){
-        console.log(dato.time)
-        UI.moveBall(dato);
-        UI.moveBar(dato);
-        this.checkIfLost(dato);
-    } */
-
-    static collidePlayer1(dato){
+    static collidePlayer1(){
        
         if(ball.offsetLeft <= (bar1.clientWidth) &&
            ball.offsetTop >= bar1.offsetTop &&
@@ -29,8 +21,12 @@ export default class DATE {
 
         return false;
     }
+    /**
+     * CONTROLAMOS EL CONTACTO DE LAS BARRA2 CON LA PELOTA
+     * @returns RETORNA UN BOOLEAN PARA CONTROLAR EL CONTACTO CDE LA BARRA CON LA PELOTA
+     */
 
-    static collidePlayer2(dato){
+    static collidePlayer2(){
         
         if(ball.offsetLeft >= (game.width-bar2.clientWidth) &&  
            ball.offsetTop >= bar2.offsetTop &&
@@ -41,17 +37,20 @@ export default class DATE {
 
     }
    
+    /**
+     * CONTROLAMOS SI LA BOLLA SUPERA LOS LIMITES Y DETERMINAR UN GANADOR
+     */
 
-    static checkIfLost(dato){
+    static checkIfLost(){
         
         if(ball.offsetLeft >= game.width){
             UI.stop(game);
             console.log("punto player 1");
         }
         if(ball.offsetLeft <= 0){
-            console.log(game.width)
+            
             UI.stop(game);
-           
+            console.log("punto player 1");
         }
     }
     

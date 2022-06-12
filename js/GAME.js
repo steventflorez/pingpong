@@ -1,4 +1,8 @@
+
+
 export default class GAME {
+
+
     constructor(time, movement,movementBar,width,height,controlGame,player1,player2){
         this.time = time
         this.movement = movement

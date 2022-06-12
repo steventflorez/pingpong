@@ -33,7 +33,7 @@ function  play(){
 }
 
 /**
- * 
+ * INICIALIZAMOS LOS PARAMETROS DEL JUEGO Y EL CONTROL DE LOS JUGADORES
  */
 
 function init(){
@@ -47,6 +47,11 @@ function init(){
     game.player2.keyPress = false;
     game.player2.keyCode = null;
 }
+
+/**
+ * LE DAMOS DIRECCION A LAS BARRAS PLAYER
+ * @param {*} e EVENTO DE PRESION DE UNA TECLA DEL TECLADO
+ */
 document.onkeydown = function(e){
 
         e = e || window.event;
@@ -63,6 +68,11 @@ document.onkeydown = function(e){
             break;
         }
     }
+
+    /**
+     * MCONTROLAMOS SI UNA TECLA ESTA CIENDO PRECIONADA PARA MOVER O DETENER LA BARRA PLAYER
+     * @param {*} e EVENTO PARA SABER SI UNA TECLA ESTA CIENDO PRECIONADA
+     */
 
     document.onkeyup = function(e){
         if(e.keyCode == 81 || e.keyCode == 65)

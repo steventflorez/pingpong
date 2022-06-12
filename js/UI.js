@@ -5,16 +5,22 @@ import { game } from "./main.js";
 
 export default class UI {
     
-    
-
-    static stop(game){
+    /**
+     * LIMPIAMOS EL INTERVALO Y CAMBIAMOS EL COLOR DEL BODY
+     */
+   
+    static stop(){
         clearInterval(game.controlGame);
         document.body.style.background = "#f00";
     }
 
-    static  moveBall (game){
+    /**
+     * CONTROLAMOS EL MOVIMIENTO DE LA PELORA
+     */
+
+    static  moveBall (){
         
-        this.checkStateBall(game);
+        this.checkStateBall();
         
         switch(ball.state){
             case 1: 
@@ -38,8 +44,12 @@ export default class UI {
         }
     }
 
-    static checkStateBall(game){
-        //console.log(DATE.collidePlayer1(game))
+    /**
+     * REVISAMOS EL ESTADO DE LA PELOTA PARA SABER SU DIRECCION
+     */
+
+    static checkStateBall(){
+    
         
         if(DATE.collidePlayer2(game)){
             ball.direction = 2;
@@ -60,7 +70,11 @@ export default class UI {
         }
     }
 
-    static moveBar(game){
+    /**
+     * CONTROLAMOS EL MOVIMIENTO DE LA BARRA 
+     */
+
+    static moveBar(){
         if(game.player1.keyPress){
             if(game.player1.keyCode == 81 && bar1.offsetTop >=0)
                 bar1.style.top = (bar1.offsetTop - game.movementBar) + "px";
