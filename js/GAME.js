@@ -4,7 +4,7 @@
 
 
 //export default class GAME{constructor(t,e,h,i,s,o,r,a){this.time=t,this.movement=e,this.movementBar=h,this.width=i-e,this.height=s-e,this.controlGame=o,this.player1=r,this.player2=a}}
-/
+
 
 
 
